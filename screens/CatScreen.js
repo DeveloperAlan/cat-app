@@ -3,6 +3,7 @@ import {
   Image,
   Platform,
   ScrollView,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -20,7 +21,8 @@ export default class CatScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <SafeAreaView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
           <View style={styles.welcomeContainer}>
             <Image
               source={
@@ -51,7 +53,7 @@ export default class CatScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
+        </SafeAreaView>
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
