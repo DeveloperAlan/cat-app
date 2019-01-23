@@ -8,7 +8,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Slider
+  Slider,
+  Button
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -18,6 +19,22 @@ export default class CatScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      minutes: 10
+    }
+
+    this.handleTimerChange = this.handleTimerChange.bind(this);
+  }
+
+  handleTimerChange(value) {
+    this.setState({
+      minutes: value
+    })
+  }
 
   render() {
     return (
@@ -35,8 +52,12 @@ export default class CatScreen extends React.Component {
             />
           </View>
 
+          <View style={styles.timerContainer}>
+            <Text style={styles.timerText}>{this.state.minutes}</Text>
+          </View>
+
           <View style={styles.sliderContainer}>
-            <Slider maximumValue='100' minimumValue='0' step='1' value='10'/>
+            <Slider onValueChange={this.handleTimerChange} maximumValue='100' minimumValue='0' step='1' value={this.state.minutes}/>
           </View>
 
           {/*<View style={styles.getStartedContainer}>
@@ -118,10 +139,15 @@ const styles = StyleSheet.create({
   },
   catContainer: {
     alignItems: 'center',
-    marginTop: 100,
   },
   sliderContainer: {
 
+  },
+  timerContainer: {
+    alignItems: 'center'
+  },
+  timerText: {
+    fontSize: 26
   },
   welcomeImage: {
     width: 400,
