@@ -60,6 +60,10 @@ export default class CatScreen extends React.Component {
             <Slider onValueChange={this.handleTimerChange} maximumValue='100' minimumValue='0' step='1' value={this.state.minutes}/>
           </View>
 
+          <View style={styles.buttonContainer}>
+            <Button title="Start Timer"/>
+          </View>
+
           {/*<View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
@@ -146,6 +150,7 @@ const styles = StyleSheet.create({
   timerContainer: {
     alignItems: 'center'
   },
+  buttonContainer: {},
   timerText: {
     fontSize: 26
   },
