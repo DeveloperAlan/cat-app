@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Slider
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -23,18 +24,22 @@ export default class CatScreen extends React.Component {
       <View style={styles.container}>
         <SafeAreaView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-          <View style={styles.welcomeContainer}>
+          <View style={styles.catContainer}>
             <Image
               source={
                 __DEV__
-                  ? require('../assets/images/robot-dev.png')
+                  ? require('../assets/images/cat.png')
                   : require('../assets/images/robot-prod.png')
               }
               style={styles.welcomeImage}
             />
           </View>
 
-          <View style={styles.getStartedContainer}>
+          <View style={styles.sliderContainer}>
+            <Slider maximumValue='100' minimumValue='0' step='1' value='10'/>
+          </View>
+
+          {/*<View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
             <Text style={styles.getStartedText}>Get started by opening</Text>
@@ -52,15 +57,11 @@ export default class CatScreen extends React.Component {
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
-          </View>
+          </View>*/}
         </SafeAreaView>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
+          <Text style={styles.tabBarInfoText}>Kat</Text>
         </View>
       </View>
     );
@@ -115,14 +116,16 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-  welcomeContainer: {
+  catContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 100,
+  },
+  sliderContainer: {
+
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 400,
+    height: 400,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
