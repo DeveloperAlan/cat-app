@@ -57,7 +57,9 @@ export default class CatScreen extends React.Component {
           </View>
 
           <View style={styles.sliderContainer}>
-            <Slider onValueChange={this.handleTimerChange} maximumValue='100' minimumValue='0' step='1' value={this.state.minutes}/>
+            <View style={styles.sliderItem}>
+              <Slider onValueChange={this.handleTimerChange} maximumValue='100' minimumValue='0' step='1' value={this.state.minutes}/>
+            </View>
           </View>
 
           <View style={styles.buttonContainer}>
@@ -145,7 +147,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sliderContainer: {
-
+    flex: 0.8,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'stretch'
+  },
+  sliderItem: {
+    width: 200,
   },
   timerContainer: {
     alignItems: 'center'
