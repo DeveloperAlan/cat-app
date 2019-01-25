@@ -147,10 +147,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sliderContainer: {
-    flex: 0.8,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'center',
   },
   sliderItem: {
     width: 200,
